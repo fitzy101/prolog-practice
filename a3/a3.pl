@@ -21,4 +21,13 @@ alt([X], [X]).
 alt([X,_|Xs], [X|Ys]) :- alt(Xs, Ys).
 
 %%%% Question 4. %%%%
+tdelta(time(A,B),time(C,D),E) :- H is abs(A-C),
+                                 M is abs(B-D),
+				 E = time(H, M).
+
+
+%%%% Question 5 %%%%
+size(node(_), X) :- X is 1.
+size(node(L, R), X) :- size(node(L), X1), size(node(R), X2), X is X1 + X2.
+
 
